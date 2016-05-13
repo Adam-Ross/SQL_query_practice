@@ -1,0 +1,8 @@
+This is just a small markup file that I have for taking notes on some bullshit.
+
+SELECT title, rental_rate
+FROM film
+WHERE rental_rate = .99
+;
+
+count() cont the rows in a table
