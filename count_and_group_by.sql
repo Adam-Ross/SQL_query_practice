@@ -1,17 +1,15 @@
-#count and group by
+#films by rating
+SELECT
+    rating, count(film_id)
+FROM
+    film
+GROUP BY 1
+;
 
--- SELECT count(title)
--- FROM film
--- ;
-
--- SELECT title, rental_rate
--- FROM film
--- group by rental_rate
--- ;
-
-# Using the count and group by in symphony, could also put group by 2 -- 2 is equal to the col #
-
-SELECT count(rating)
-FROM film
-group by rating
+#films by rating and rental price
+SELECT
+    rating, rental_rate, count(film_id)
+FROM
+    film
+GROUP BY 1,2
 ;
