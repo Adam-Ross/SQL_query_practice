@@ -11,7 +11,7 @@
 
 # Using the count and group by in symphony, could also put group by 2 -- 2 is equal to the col #
 
-SELECT count(title), rental_rate
+SELECT count(rating)
 FROM film
-group by rental_rate
+group by rating
 ;
