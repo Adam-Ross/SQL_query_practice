@@ -24,3 +24,18 @@ GROUP BY
 ORDER BY
   2 desc
 ;
+
+
+SELECT
+    i.store_id "Store ID", SUM(p.amount) as Revenue
+FROM
+    rental r, payment p, inventory i
+WHERE
+    p.rental_id = r.rental_id
+    AND
+    r.inventory_id = i.inventory_id
+GROUP BY
+    1
+ORDER BY
+    2 desc
+;
