@@ -7,3 +7,15 @@ FROM
 GROUP BY
   1
 ;
+
+
+SELECT
+  left(r.rental_date, 7) as "Month", COUNT(distinct i.film_id) as "Distinct films rented"
+FROM
+  rental r, inventory i
+WHERE
+  r.inventory_id = i.inventory_id
+GROUP BY
+  1
+;
+
