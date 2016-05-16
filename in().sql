@@ -13,3 +13,15 @@ WHERE
 GROUP BY
     1
 ;
+
+#Comparison operators
+
+SELECT
+  r.customer_id as Customer, COUNT(r.rental_id)
+FROM
+  rental r
+GROUP BY
+  1
+HAVING
+  COUNT(r.rental_id) >= 3
+  ;
