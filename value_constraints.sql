@@ -26,3 +26,17 @@ CREATE TABLE Rooms (
   movie_id int UNIQUE,
   FOREIGN KEY (movie_id) REFERENCES Movies
 );
+
+
+SELECT Movies.title, Rooms.id, Rooms.seats FROM Movies
+INNER JOIN Rooms
+ON Movies.id = Rooms.movie_id
+WHERE Rooms.seats > 75
+ORDER BY Rooms.seats DESC;
+
+SELECT Actors.name, Movies.title FROM Actors
+INNER JOIN Actors_Movies
+ON Actors.id = Actors_Movies.actor_id
+INNER JOIN Movies
+ON Actors_Movies.movie_id = Movies.id
+ORDER BY Movies.title;
