@@ -27,13 +27,15 @@ CREATE TABLE Rooms (
   FOREIGN KEY (movie_id) REFERENCES Movies
 );
 
-
+#Inner joins will only return data for both.  Only movies that have reviews and reviews
+#that have movies.
 SELECT Movies.title, Rooms.id, Rooms.seats FROM Movies
 INNER JOIN Rooms
 ON Movies.id = Rooms.movie_id
 WHERE Rooms.seats > 75
 ORDER BY Rooms.seats DESC;
 
+# Same.
 SELECT Actors.name, Movies.title FROM Actors
 INNER JOIN Actors_Movies
 ON Actors.id = Actors_Movies.actor_id
